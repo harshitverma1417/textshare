@@ -1,0 +1,19 @@
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyB_UkIznwrrIPa0dw0_7Dwxgm8Vb5QtGcc",
+    authDomain: "textshare-harshit.firebaseapp.com",
+    projectId: "textshare-harshit",
+    storageBucket: "textshare-harshit.firebasestorage.app",
+    messagingSenderId: "841688229362",
+    appId: "1:841688229362:web:bddf8c3cee5c8e621d376b"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>

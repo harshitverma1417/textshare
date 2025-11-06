@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>TextShare — Create Note</title>
+  <link rel="icon" href="assets/logo.svg"/>
+  <meta name="description" content="Paste text or markdown and get a shareable link."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="shell">
+    <header class="header">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="TextShare logo"/>
+        <h1>TextShare</h1>
+      </div>
+      <div class="actions">
+        <button id="themeBtn" aria-label="Toggle theme">🌗</button>
+        <a class="ghost" href="view.html">Open Link</a>
+      </div>
+    </header>
+
+    <main class="card">
+      <p class="muted">Paste your text below. Choose expiry. Click <b>Generate Link</b>.</p>
+
+      <label class="block">Your Text</label>
+      <textarea id="textInput" rows="14" placeholder="Type or paste here..."></textarea>
+
+      <div class="row">
+        <label>Expiry
+          <select id="expiry">
+            <option value="1d">1 day</option>
+            <option value="7d">1 week</option>
+            <option value="30d" selected>1 month</option>
+            <option value="90d">3 months</option>
+          </select>
+        </label>
+        <label>Render as
+          <select id="render">
+            <option value="plain" selected>Plain text</option>
+            <option value="markdown">Markdown</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="row">
+        <button id="shareBtn">Generate Link</button>
+        <button id="clearBtn" class="ghost">Clear</button>
+      </div>
+
+      <section id="result" class="result hidden" aria-live="polite">
+        <h3>Your Share Link</h3>
+        <input id="shareLink" readonly/>
+        <div class="row">
+          <button id="copyBtn">Copy Link</button>
+          <button id="qrBtn" class="ghost">QR Code</button>
+          <button id="waBtn" class="ghost">Share via WhatsApp</button>
+        </div>
+        <div id="qrcode" class="qrcode hidden"></div>
+      </section>
+
+      <p class="tiny muted">Privacy: Anyone with the link can view. Avoid sharing sensitive data.</p>
+    </main>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> TextShare</span>
+      <a href="#" target="_blank" rel="noopener">Source</a>
+    </footer>
+  </div>
+
+  <!-- App + page logic -->
+  <script type="module" src="app.js"></script>
+  <script type="module" src="write.js"></script>
+  <!-- QRCode library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+</body>
+</html>
